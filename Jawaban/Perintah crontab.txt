@@ -1,0 +1,5 @@
+Soal 1
+14 14 14 2 5 /bin/bash ../soal1.sh
+
+Soal 5
+2-30/6 * * * * /bin/bash ../soal5.sh
