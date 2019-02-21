@@ -5,7 +5,7 @@
 <ol>
   <li>Anda diminta tolong oleh teman anda untuk mengembalikan filenya yang telah dienkripsi oleh seseorang menggunakan bash script, file yang dimaksud adalah nature.zip. Karena terlalu mudah kalian memberikan syarat akan membuka seluruh  file tersebut jika pukul 14:14 pada tanggal 14 Februari atau hari tersebut adalah hari jumat pada bulan Februari.
   <br>Hint: Base64, Hexdump
-  <br><br>Jawaban: File nature.zip awalnya diextract dengan command *unzip*. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. Perintah <a href="/Jawaban/1/soal1.sh">**ini**</a> kemudian dijalankan di crontab dengan mengeset  
+  <br><br>Jawaban: File nature.zip awalnya diextract dengan command <italic>unzip<italic>. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. Perintah <a href="/Jawaban/1/soal1.sh"><bold>ini</bold></a> kemudian dijalankan di crontab dengan mengeset  
   </li>
   <br>  
   <li>Anda merupakan pegawai magang pada sebuah perusahaan retail, dan anda diminta untuk memberikan laporan berdasarkan file WA_Sales_Products_2012-14.csv.
