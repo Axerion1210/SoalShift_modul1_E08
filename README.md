@@ -1,4 +1,4 @@
-# SoalShift_modul1_E08
+﻿# SoalShift_modul1_E08
 
 #### Bagas Yanuar - 05111740000074 <br> Octavianus Giovanni Yaunatan - 05111740000113
 
@@ -10,7 +10,7 @@
   jumat pada bulan Februari.
   <br>Hint: Base64, Hexdump
     
-  <br>Jawaban: <a href=""></a> 
+  <br>Jawaban: File nature.zip awalnya diextract dengan command *unzip*<a href=""></a> 
   </li>
   <br>  
   <li>Anda merupakan pegawai magang pada sebuah perusahaan retail, dan anda diminta
