@@ -5,7 +5,7 @@
 <ol>
   <li>Anda diminta tolong oleh teman anda untuk mengembalikan filenya yang telah dienkripsi oleh seseorang menggunakan bash script, file yang dimaksud adalah nature.zip. Karena terlalu mudah kalian memberikan syarat akan membuka seluruh  file tersebut jika pukul 14:14 pada tanggal 14 Februari atau hari tersebut adalah hari jumat pada bulan Februari.
   <br>Hint: Base64, Hexdump
-  <br><br>Jawaban:<br>File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. <a href="/Jawaban/1/soal1.sh">Perintah ini</a> dijalankan di crontab dengan memasukkan command "14 14 14 2 5 /bin/bash ../soal1.sh", artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan perintah soal1.sh (lokasi file tergantung dari komputer masing-masing)<br> Source Code: <a href="/Jawaban/1/soal1.sh">soal1.sh</a>
+  <br><br>Jawaban:<br>File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. <a href="/Jawaban/1/soal1.sh">Perintah ini</a> dijalankan di crontab dengan kode waktu "14 14 14 2 5", artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan perintah soal1.sh <br> Source Code: <a href="/Jawaban/1/soal1.sh">soal1.sh</a>
   </li>
   <br>  
   <li>Anda merupakan pegawai magang pada sebuah perusahaan retail, dan anda diminta untuk memberikan laporan berdasarkan file WA_Sales_Products_2012-14.csv.
@@ -15,7 +15,9 @@
     <li>Tentukan tiga product line yang memberikan penjualan(quantity) terbanyak pada soal poin i.</li>
     <li>Tentukan tiga product yang memberikan penjualan(quantity) terbanyak berdasarkan tiga product line yang didapatkan pada soal poin ii.</li>
   </ol>
-  <br>Jawaban:<br>
+  <br>Jawaban:<br>Pada soal (i), script ini dijalankan untuk mencari semua produk yang dibuat pada tahun 2012 (kolom ke-7, kolom dipisahkan dengan tanda "," dan dibaca mulai dari kiri), total penjualannya (di kolom-10) dikelompokkan berdasarkan nama negara (kolom ke-1), lalu diurutkan berdasarkan jumlah penjualan dimulai dari yang paling banyak. Hasil tadi kemudian dicari lagi yang memiliki penjualan terbanyak, yaitu United States/Amerika Serikat (karena sudah diurutkan, maka hanya dicari baris teratas NR==1) lalu diprint nama negara tersebut dan jumlah penjualannya dan disimpan di soal2.txt.
+<br>Pada soal (ii), script awk dijalankan dengan memfilter produk-produk yang dijual pada tahun 2012 oleh negara Amerika Serikat. Hasilnya berupa tabel dengan kolom Nama Negara (kolom ke-1), Tahun (kolom ke-7), Product Line (kolom ke-4), dan jumlah penjualannya (kolom ke-10), lalu diurutkan berdasarkan jumlah penjualan dari yang paling banyak. Kemudian dicari tiga Product Line teratas (dengan penjualan terbanyak) lalu disimpan di soal2b.txt.
+<br>Pada soal (iii), script awk dijalankan untuk memfilter tabel ber
   <br> Source Code: <a href="/Jawaban/2/soal2.sh">soal2.sh</a>
   </li><br>
   <li>Buatlah sebuah script bash yang dapat menghasilkan password secara acak sebanyak 12 karakter yang terdapat huruf besar, huruf kecil, dan angka. Password acak tersebut disimpan pada file berekstensi .txt dengan ketentuan pemberian nama sebagai berikut:
@@ -25,7 +27,7 @@
     <li>Urutan nama file tidak boleh ada yang terlewatkan meski filenya dihapus.</li>
     <li>Password yang dihasilkan tidak boleh sama.</li>
   </ol>
-  <br>Jawaban:<br>Script ini awalnya akan mencari file dengan nama "password1.txt". Karena tidak ada file tersebut maka akan dibuat file "password1.txt" yang berisi password random 12 karakter yang mengandung angka, huruf kecil dan huruf besar. Apabila script ini dijalankan lagi, maka script ini akan mencari "password1.txt", karena sudah ada file dengan nama tersebut, maka perintah akan mencari "password2.txt", lalu membuat filenya, dan begitu seterusnya. Apabila suatu file dihapus, maka saat script ini dijalankan, perintah ini akan membuat file baru dengan nama file yang sebelumnya bukan dengan nama file setelah file terbaru.
+  <br>Jawaban:<br>Script ini awalnya akan membuat file "password1.txt" yang berisi password random 12 karakter yang mengandung angka, huruf kecil dan huruf besar. Apabila script ini dijalankan lagi, maka script ini akan mencari "password1.txt", karena sudah ada file dengan nama tersebut, maka perintah akan membuat file "password2.txt", dan begitu seterusnya. Apabila suatu file dihapus, maka saat script ini dijalankan, perintah ini akan membuat file baru dengan nama file yang sebelumnya bukan dengan nama file setelah file terbaru, agar urutan nama file tidak ada yang terlewatkan meski filenya dihapus.
   <br> Source Code: <a href="/Jawaban/3/soal3.sh">soal3.sh</a>
   </li><br>
   <li>Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:
