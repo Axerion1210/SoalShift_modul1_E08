@@ -18,7 +18,6 @@
   <br><br>Jawaban
   <br> Source Code: <a href="/Jawaban/2/soal2.sh">soal2.sh</a>
   </li><br>
-
   <li>Buatlah sebuah script bash yang dapat menghasilkan password secara acak sebanyak 12 karakter yang terdapat huruf besar, huruf kecil, dan angka. Password acak tersebut disimpan pada file berekstensi .txt dengan ketentuan pemberian nama sebagai berikut:
 
   <ol>
@@ -30,7 +29,6 @@
   <br><br>Jawaban
   <br> Source Code: <a href="/Jawaban/3/soal3.sh">soal3.sh</a>
   </li><br>
-
   <li>Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:
 
   <ol>
@@ -42,7 +40,6 @@
   </ol>
   <br><br>Jawaban
   </li><br>
-
   <li>Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:
   <ol>
     <li>Tidak mengandung string “sudo”, tetapi mengandung string “cron”, serta buatlah pencarian stringnya tidak bersifat case sensitive, sehingga huruf kapital atau tidak, tidak menjadi masalah.</li>
