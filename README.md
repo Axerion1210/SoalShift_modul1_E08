@@ -1,4 +1,7 @@
 # SoalShift_modul1_E08
+
+#### Bagas Yanuar - 05111740000074 <br> Octavianus Giovanni Yaunatan - 05111740000113
+
 <ol>
   <li>Anda diminta tolong oleh teman anda untuk mengembalikan filenya yang telah
   dienkripsi oleh seseorang menggunakan bash script, file yang dimaksud adalah
@@ -7,9 +10,9 @@
   jumat pada bulan Februari.
   <br>Hint: Base64, Hexdump
     
-  <br>Jawaban
+  <br>Jawaban: <a href=""></a> 
   </li>
-    
+  <br>  
   <li>Anda merupakan pegawai magang pada sebuah perusahaan retail, dan anda diminta
   untuk memberikan laporan berdasarkan file WA_Sales_Products_2012-14.csv.
   Laporan yang diminta berupa:
@@ -21,7 +24,7 @@
   </ol>
   
   <br>Jawaban
-  </li>
+  </li><br>
 
   <li>Buatlah sebuah script bash yang dapat menghasilkan password secara acak
   sebanyak 12 karakter yang terdapat huruf besar, huruf kecil, dan angka. Password
@@ -36,7 +39,7 @@
   </ol>
   
   <br>Jawaban
-  </li>
+  </li><br>
 
   <li>Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-
   bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (string
@@ -52,7 +55,7 @@
   </ol>
   
   <br>Jawaban
-  </li>
+  </li><br>
 
   <li>Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi
   kriteria berikut:
