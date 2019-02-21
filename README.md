@@ -37,7 +37,7 @@
     <li>dan buatkan juga bash script untuk dekripsinya.</li>
   </ol>
   <br>Jawaban:
-  <br> Source Code: <a href="/Jawaban/5/soal5.sh">soal5.sh</a>
+  <br> Source Code: <a href="/Jawaban/4/soal4.sh">soal4.sh</a>
   </li><br>
   <li>Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:
   <ol>
@@ -46,7 +46,7 @@
     <li>Masukkan record tadi ke dalam file logs yang berada pada direktori /home/[user]/modul1.</li>
     <li>Jalankan script tadi setiap 6 menit dari menit ke 2 hingga 30, contoh 13:02, 13:08, 13:14, dst.</li>
   </ol>
-  <br>Jawaban:
+  <br>Jawaban: Jalankan perintah awk untuk mencari record dalam syslog yang tidak mengandung string "sudo" tapi mengandung string "cron" dengan cara (/[sS][uU][dD][oO]/). Maksud dari potongan kode tersebut adalah dicari string dengan urutan sudo, dan tidak case-sensitive. Kemudian hasil tersebut ditambah dengan kondisi jumlah fieldnya kurang dari 13 (NF<13). Perintah ini kemudian dijalankan di crontab dengan kode waktunya "2-30/6 * * * *", maksudnya setiap 6 menit dari menit ke-2 sampai 30 (jadinya menit ke-2, 8, 14, dst.), lalu akan disimpan hasilnya di modul1.
   <br> Source Code: <a href="/Jawaban/5/soal5.sh">soal5.sh</a>
   </li>
 </ol>
