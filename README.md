@@ -5,7 +5,7 @@
 <ol>
   <li>Anda diminta tolong oleh teman anda untuk mengembalikan filenya yang telah dienkripsi oleh seseorang menggunakan bash script, file yang dimaksud adalah nature.zip. Karena terlalu mudah kalian memberikan syarat akan membuka seluruh  file tersebut jika pukul 14:14 pada tanggal 14 Februari atau hari tersebut adalah hari jumat pada bulan Februari.
   <br>Hint: Base64, Hexdump
-  <br><br>Jawaban: File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. <a href="/Jawaban/1/soal1.sh">Perintah ini</a> dijalankan di crontab dengan memasukkan command "14 14 14 2 5 /bin/bash ../soal1.sh", artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan perintah soal1.sh (lokasi file tergantung dari komputer masing-masing)<br> Source Code: <a href="/Jawaban/1/soal1.sh">soal1.sh</a>
+  <br><br>Jawaban:<br>File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. <a href="/Jawaban/1/soal1.sh">Perintah ini</a> dijalankan di crontab dengan memasukkan command "14 14 14 2 5 /bin/bash ../soal1.sh", artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan perintah soal1.sh (lokasi file tergantung dari komputer masing-masing)<br> Source Code: <a href="/Jawaban/1/soal1.sh">soal1.sh</a>
   </li>
   <br>  
   <li>Anda merupakan pegawai magang pada sebuah perusahaan retail, dan anda diminta untuk memberikan laporan berdasarkan file WA_Sales_Products_2012-14.csv.
@@ -46,7 +46,9 @@
     <li>Masukkan record tadi ke dalam file logs yang berada pada direktori /home/[user]/modul1.</li>
     <li>Jalankan script tadi setiap 6 menit dari menit ke 2 hingga 30, contoh 13:02, 13:08, 13:14, dst.</li>
   </ol>
-  <br>Jawaban: Jalankan perintah awk untuk mencari record dalam syslog yang tidak mengandung string "sudo" tapi mengandung string "cron" dengan cara (/[sS][uU][dD][oO]/). Maksud dari potongan kode tersebut adalah dicari string dengan urutan sudo, dan tidak case-sensitive. Kemudian hasil tersebut ditambah dengan kondisi jumlah fieldnya kurang dari 13 (NF<13). Perintah ini kemudian dijalankan di crontab dengan kode waktunya "2-30/6 * * * *", maksudnya setiap 6 menit dari menit ke-2 sampai 30 (jadinya menit ke-2, 8, 14, dst.), lalu akan disimpan hasilnya di modul1.
+  <br>Jawaban:<br>Jalankan perintah awk untuk mencari record dalam syslog yang tidak mengandung string "sudo" tapi mengandung string "cron" dengan cara (/[cC][rR][oO][nN]/). Maksud dari potongan kode tersebut adalah dicari string dengan urutan "cron", dan bersifat tidak case-sensitive. Kemudian hasil tersebut ditambah dengan kondisi jumlah fieldnya kurang dari 13 (NF<13). Perintah ini kemudian dijalankan di crontab dengan kode waktunya "2-30/6 * * * *", maksudnya setiap 6 menit dari menit ke-2 sampai 30 perintah ini akan dijalankan (menit ke-2, 8, 14, dst.), lalu akan disimpan hasilnya di modul1.
   <br> Source Code: <a href="/Jawaban/5/soal5.sh">soal5.sh</a>
   </li>
 </ol>
+
+<a href="/Jawaban/Perintah Crontab">Perintah crontab untuk soal tertentu ada di sini<a>
