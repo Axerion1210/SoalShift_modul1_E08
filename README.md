@@ -25,7 +25,7 @@
     <li>Urutan nama file tidak boleh ada yang terlewatkan meski filenya dihapus.</li>
     <li>Password yang dihasilkan tidak boleh sama.</li>
   </ol>
-  <br>Jawaban
+  <br>Jawaban:
   <br> Source Code: <a href="/Jawaban/3/soal3.sh">soal3.sh</a>
   </li><br>
   <li>Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:
@@ -36,7 +36,8 @@
     <li>Backup file syslog setiap jam.</li>
     <li>dan buatkan juga bash script untuk dekripsinya.</li>
   </ol>
-  <br>Jawaban
+  <br>Jawaban:
+  <br> Source Code: <a href="/Jawaban/5/soal5.sh">soal5.sh</a>
   </li><br>
   <li>Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:
   <ol>
@@ -45,7 +46,7 @@
     <li>Masukkan record tadi ke dalam file logs yang berada pada direktori /home/[user]/modul1.</li>
     <li>Jalankan script tadi setiap 6 menit dari menit ke 2 hingga 30, contoh 13:02, 13:08, 13:14, dst.</li>
   </ol>
-  <br>Jawaban
+  <br>Jawaban:
   <br> Source Code: <a href="/Jawaban/5/soal5.sh">soal5.sh</a>
   </li>
 </ol>
