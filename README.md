@@ -15,7 +15,7 @@
     <li>Tentukan tiga product line yang memberikan penjualan(quantity) terbanyak pada soal poin i.</li>
     <li>Tentukan tiga product yang memberikan penjualan(quantity) terbanyak berdasarkan tiga product line yang didapatkan pada soal poin ii.</li>
   </ol>
-  <br>Jawaban:
+  <br>Jawaban:<br>
   <br> Source Code: <a href="/Jawaban/2/soal2.sh">soal2.sh</a>
   </li><br>
   <li>Buatlah sebuah script bash yang dapat menghasilkan password secara acak sebanyak 12 karakter yang terdapat huruf besar, huruf kecil, dan angka. Password acak tersebut disimpan pada file berekstensi .txt dengan ketentuan pemberian nama sebagai berikut:
@@ -25,7 +25,7 @@
     <li>Urutan nama file tidak boleh ada yang terlewatkan meski filenya dihapus.</li>
     <li>Password yang dihasilkan tidak boleh sama.</li>
   </ol>
-  <br>Jawaban:
+  <br>Jawaban:<br>Script ini awalnya akan mencari file dengan nama "password1.txt". Karena tidak ada file tersebut maka akan dibuat file "password1.txt" yang berisi password random 12 karakter yang mengandung angka, huruf kecil dan huruf besar. Apabila script ini dijalankan lagi, maka script ini akan mencari "password1.txt", karena sudah ada file dengan nama tersebut, maka perintah akan mencari "password2.txt", lalu membuat filenya, dan begitu seterusnya. Apabila suatu file dihapus, maka saat script ini dijalankan, perintah ini akan membuat file baru dengan nama file yang sebelumnya bukan dengan nama file setelah file terbaru.
   <br> Source Code: <a href="/Jawaban/3/soal3.sh">soal3.sh</a>
   </li><br>
   <li>Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:
