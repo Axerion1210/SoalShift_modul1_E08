@@ -9,6 +9,7 @@
 	  
 ```bash
 #!/bin/bash
+
 unzip /home/siung2/Documents/soalshift1/1/nature.zip -d /home/siung2/Documents/soalshift1/1/
 a=0
 for photo in /home/siung2/Documents/soalshift1/1/nature/*.jpg
