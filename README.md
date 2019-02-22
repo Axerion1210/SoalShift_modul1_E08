@@ -20,7 +20,9 @@ do
 done
 ```
 
-File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. <a href="/Jawaban/1/soal1.sh">Perintah ini</a> dijalankan di crontab dengan kode waktu "14 14 14 2 5", artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan perintah soal1.sh <br> Source Code: <a href="/Jawaban/1/soal1.sh">soal1.sh</a>
+File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. <a href="/Jawaban/1/soal1.sh">Perintah ini</a> dijalankan di crontab dengan kode waktu "14 14 14 2 5", artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan perintah soal1.sh
+
+Source Code: <a href="/Jawaban/1/soal1.sh">soal1.sh</a>
   </li>
   <br>  
   <li>Anda merupakan pegawai magang pada sebuah perusahaan retail, dan anda diminta untuk memberikan laporan berdasarkan file WA_Sales_Products_2012-14.csv.
