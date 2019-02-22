@@ -216,8 +216,7 @@ cipher2+=( ${temp2[@]:(-(26-$key))} )
 cipher2+=( ${temp2[@]:0:$(($key))} )
 temp1+=( ${temp2[@]} )
 cipher1+=( ${cipher2[@]} )
-NOW=$(date +"%H:%M %d-%m-%Y")
-< /var/log/syslog > "$NOW" tr "${temp1[*]}" "${cipher1[*]}"
+NOW=$(date +"%H:%M %d-%m-%Y") < /var/log/syslog > "$NOW" tr "${temp1[*]}" "${cipher1[*]}"
 
 
 #!/bin/bash
@@ -244,7 +243,7 @@ tr "${cipher1[*]}" "${temp1[*]}" <"$NOW"> "$NOW".decrypted
 Source Code: <a href="/Jawaban/4/soal4.sh">soal4.sh</a> dan <a href="/Jawaban/4/soal4e.sh">soal4e.sh</a>
 
 Script ini dijalankan di crontab dengan syntax `0 * * * * /bin/bash /bin/bash /home/siung2/Documents/soalshift1/4/soal4.sh`, artinya script ini akan dijalankan setiap jam. Script untuk poin (i) sampai (iv) dijalankan dengan mengambil variabel dari jam, kemudian digunakan untuk membuat dua array berisi cipher code, satu untuk huruf kecil dan satu untuk huruf besar, yang digeser maju sesuai dengan jam pada saat itu, misalnya apabila jam 10 maka huruf-huruf pada array cipher akan digeser 10 ke kiri, dan sisa huruf lainnya akan ditaruh di array belakang. Dengan berdasarkan pada array cipher itu, file syslog kemudian dibackup dengan menyesuaikan urutan abjad pada file dengan urutan abjad pada array cipher. Lalu hasilnya disimpan ke file dengan format `jam:menit tanggal-bulan-tahun` mengikuti waktu saat itu.<br>
-Untuk script pada poin (v), file yang sebelumnya telah dibackup akan 
+Untuk script pada poin (v), file yang sebelumnya telah dibackup akan dibuatkan array cipher untuk decrypt, dengan menggeser huruf mundur sebanyak Jam yang terdapat pada nama file, sisa huruf kemudian ditaruh di array bagian depan. Dengan berdasarkan array tersebut, file backup tadi kemudian didecode dengan menyesuaikan posisi abjad dengan abjad di array cipher, hingga didapatkan file semula.
   </li>
   
   <li>Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:
