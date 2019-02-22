@@ -39,7 +39,7 @@
     <li>dan buatkan juga bash script untuk dekripsinya.</li>
   </ol>
   <br>Jawaban:
-  <br> Source Code: <a href="/Jawaban/4/soal4.sh">soal4.sh</a> dan <a href="/Jawaban/4/soal4d.sh">soal4d.sh</a>
+  <br> Source Code: <a href="/Jawaban/4/soal4.sh">soal4.sh</a> dan <a href="/Jawaban/4/soal4e.sh">soal4e.sh</a>
   </li><br>
   <li>Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:
   <ol>
