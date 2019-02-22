@@ -30,7 +30,24 @@ done
     <li>Tentukan tiga product line yang memberikan penjualan(quantity) terbanyak pada soal poin i.</li>
     <li>Tentukan tiga product yang memberikan penjualan(quantity) terbanyak berdasarkan tiga product line yang didapatkan pada soal poin ii.</li>
   </ol>
-  <br>Jawaban:<br>Pada soal (i), script ini dijalankan untuk mencari semua produk yang dibuat pada tahun 2012 (kolom ke-7, kolom dipisahkan dengan tanda "," dan dibaca mulai dari kiri), total penjualannya (di kolom-10) dikelompokkan berdasarkan nama negara (kolom ke-1), lalu diurutkan berdasarkan jumlah penjualan dimulai dari yang paling banyak. Hasil tadi kemudian dicari lagi yang memiliki penjualan terbanyak, yaitu United States/Amerika Serikat (karena sudah diurutkan, maka hanya dicari baris teratas NR==1) lalu diprint nama negara tersebut dan jumlah penjualannya dan disimpan di "soal2.txt".
+  <br>Jawaban:
+
+```bash
+#!/bin/bash
+`cat "$1"|awk 'BEGIN{FS=","}{if($7==2012)arr[$1]+=$10}END{for(a in arr)print arr[a]","a}'| sort -rg | awk 'NR==1'|awk 'BEGIN{FS=","}{print $2}' > soal2.txt` < "$1"
+
+ans=`cat soal2.txt`
+
+`cat WA_Sales_Products_2012-14.csv| awk -v var="$ans" 'FS=","{if($7==2012 && $1==var)print $1","$7","$4","$10}' | awk 'FS=","{arr[$3]+=$4} END {for(a in arr) print arr[a]","a}' | sort -rg |awk 'NR < 4' |awk 'BEGIN{FS=","}{print $2}' > soal2b.txt`
+
+ans1=`cat soal2b.txt | awk NR==1`
+ans2=`cat soal2b.txt | awk NR==2`
+ans3=`cat soal2b.txt | awk NR==3`
+
+`cat WA_Sales_Products_2012-14.csv| awk -v var="$ans" -v var1="$ans1" -v var2="$ans2" -v var3="$ans3" 'BEGIN {FS=","}{if($7==2012 && $1==var && ($4 == var1|| $4==var2 || $4 ==var3))print $1","$7","$6","$10}' |  awk 'FS=","{arr[$3]+=$4} END {for(a in arr) print arr[a]","a}' | sort -rg|awk 'NR < 4' |awk 'BEGIN{FS=","}{print $2}' > soal2c.txt`
+```
+
+<br>Pada soal (i), script ini dijalankan untuk mencari semua produk yang dibuat pada tahun 2012 (kolom ke-7, kolom dipisahkan dengan tanda "," dan dibaca mulai dari kiri), total penjualannya (di kolom-10) dikelompokkan berdasarkan nama negara (kolom ke-1), lalu diurutkan berdasarkan jumlah penjualan dimulai dari yang paling banyak. Hasil tadi kemudian dicari lagi yang memiliki penjualan terbanyak, yaitu United States/Amerika Serikat (karena sudah diurutkan, maka hanya dicari baris teratas NR==1) lalu diprint nama negara tersebut dan jumlah penjualannya dan disimpan di "soal2.txt".
 <br>Pada soal (ii), script awk dijalankan dengan memfilter produk-produk yang dijual pada tahun 2012 oleh negara Amerika Serikat. Hasilnya berupa tabel dengan kolom Nama Negara (kolom ke-1), Tahun (kolom ke-7), Product Line (kolom ke-4), dan jumlah penjualannya (kolom ke-10), lalu diurutkan berdasarkan jumlah penjualan dari yang paling banyak. Kemudian dicari tiga Product Line teratas (dengan penjualan terbanyak) lalu disimpan di "soal2b.txt".
 <br>Pada soal (iii), script awk dijalankan untuk memfilter produk-produk dengan krieria yang ada pada soal (ii). Dihasilkan tabel baru dengan kolom nama negara, tahun, nama produk (kolom ke-6), dan jumlah penjualan, lalu diurukan berdasarkan jumlah penjualan mulai dari yang terbesar. Lalu dicari tiga produk terbanyak (tiga baris teratas dari tabel baru) lalu disimpan di "soal2c.txt".
   <br> Source Code: <a href="/Jawaban/2/soal2.sh">soal2.sh</a>
