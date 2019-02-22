@@ -6,7 +6,7 @@
   <li>Anda diminta tolong oleh teman anda untuk mengembalikan filenya yang telah dienkripsi oleh seseorang menggunakan bash script, file yang dimaksud adalah nature.zip. Karena terlalu mudah kalian memberikan syarat akan membuka seluruh  file tersebut jika pukul 14:14 pada tanggal 14 Februari atau hari tersebut adalah hari jumat pada bulan Februari.
   <br>Hint: Base64, Hexdump
   <br><br>Jawaban:
-```
+```bash
 #!/bin/bash
 
 unzip /home/siung2/Documents/soalshift1/1/nature.zip -d /home/siung2/Documents/soalshift1/1/
