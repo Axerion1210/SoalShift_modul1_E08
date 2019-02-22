@@ -21,7 +21,7 @@ do
 done
 ```
 
-File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. Perintah ini dijalankan di crontab dengan kode waktu `14 14 14 2 5`, artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan perintah soal1.sh
+File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. Perintah ini dijalankan di crontab dengan kode waktu `14 14 14 2 5`, artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan script soal1.sh
 
 Source Code: <a href="/Jawaban/1/soal1.sh">soal1.sh</a>
   </li>
@@ -202,6 +202,44 @@ Source Code: <a href="/Jawaban/3/soal3.sh">soal3.sh</a>
   </ol>
   
   Jawaban:
+
+```bash
+#!/bin/bash
+key=`date +"%H"`
+temp1=( {a..z} )
+cipher1=()
+cipher1+=( ${temp1[@]:(-(26-$key))} )
+cipher1+=( ${temp1[@]:0:$(($key))} )
+temp2=( {A..Z} )
+cipher2=()
+cipher2+=( ${temp2[@]:(-(26-$key))} )
+cipher2+=( ${temp2[@]:0:$(($key))} )
+temp1+=( ${temp2[@]} )
+cipher1+=( ${cipher2[@]} )
+NOW=$(date +"%H:%M %d-%m-%Y")
+< /var/log/syslog > "$NOW" tr "${temp1[*]}" "${cipher1[*]}"
+
+
+#!/bin/bash
+read NOW
+len=${#NOW}
+len=$((len-2))
+NOW=${NOW:1:$len}
+key=${NOW:0:2}
+key=$(($key+0))
+
+temp1=( {a..z} )
+cipher1=()
+cipher1+=( ${temp1[@]:(-(26-$key))} )
+cipher1+=( ${temp1[@]:0:$(($key))} )
+temp2=( {A..Z} )
+cipher2=()
+cipher2+=( ${temp2[@]:(-(26-$key))} )
+cipher2+=( ${temp2[@]:0:$(($key))} )
+temp1+=( ${temp2[@]} )
+cipher1+=( ${cipher2[@]} )
+tr "${cipher1[*]}" "${temp1[*]}" <"$NOW"> "$NOW".decrypted
+```
 
 Source Code: <a href="/Jawaban/4/soal4.sh">soal4.sh</a> dan <a href="/Jawaban/4/soal4e.sh">soal4e.sh</a>
   </li><br>
