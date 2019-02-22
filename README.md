@@ -21,9 +21,9 @@ do
 done
 ```
 
-File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. Perintah ini dijalankan di crontab dengan kode waktu `14 14 14 2 5`, artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan script soal1.sh
-
 Source Code: <a href="/Jawaban/1/soal1.sh">soal1.sh</a>
+
+File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. Perintah ini dijalankan di crontab dengan kode waktu `14 14 14 2 5`, artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan script soal1.sh
   </li>
   
   <li>Anda merupakan pegawai magang pada sebuah perusahaan retail, dan anda diminta untuk memberikan laporan berdasarkan file WA_Sales_Products_2012-14.csv.
@@ -50,11 +50,11 @@ ans3=`cat soal2b.txt | awk NR==3`
 `cat WA_Sales_Products_2012-14.csv| awk -v var="$ans" -v var1="$ans1" -v var2="$ans2" -v var3="$ans3" 'BEGIN {FS=","}{if($7==2012 && $1==var && ($4 == var1|| $4==var2 || $4 ==var3))print $1","$7","$6","$10}' |  awk 'FS=","{arr[$3]+=$4} END {for(a in arr) print arr[a]","a}' | sort -rg|awk 'NR < 4' |awk 'BEGIN{FS=","}{print $2}' > soal2c.txt`
 ```
 
+Source Code: <a href="/Jawaban/2/soal2.sh">soal2.sh</a>
+
 Pada soal (i), script ini dijalankan untuk mencari semua produk yang dibuat pada tahun 2012 (kolom ke-7, kolom dipisahkan dengan tanda "," dan dibaca mulai dari kiri), total penjualannya (di kolom-10) dikelompokkan berdasarkan nama negara (kolom ke-1), lalu diurutkan berdasarkan jumlah penjualan dimulai dari yang paling banyak. Hasil tadi kemudian dicari lagi yang memiliki penjualan terbanyak, yaitu United States/Amerika Serikat (karena sudah diurutkan, maka hanya dicari baris teratas NR==1) lalu diprint nama negara tersebut dan jumlah penjualannya dan disimpan di `soal2.txt`.
 <br>Pada soal (ii), script awk dijalankan dengan memfilter produk-produk yang dijual pada tahun 2012 oleh negara Amerika Serikat. Hasilnya berupa tabel dengan kolom Nama Negara (kolom ke-1), Tahun (kolom ke-7), Product Line (kolom ke-4), dan jumlah penjualannya (kolom ke-10), lalu diurutkan berdasarkan jumlah penjualan dari yang paling banyak. Kemudian dicari tiga Product Line teratas (dengan penjualan terbanyak) lalu disimpan di `soal2b.txt`.
 <br>Pada soal (iii), script awk dijalankan untuk memfilter produk-produk dengan krieria yang ada pada soal (ii). Dihasilkan tabel baru dengan kolom nama negara, tahun, nama produk (kolom ke-6), dan jumlah penjualan, lalu diurukan berdasarkan jumlah penjualan mulai dari yang terbesar. Lalu dicari tiga produk terbanyak (tiga baris teratas dari tabel baru) lalu disimpan di `soal2c.txt`.
-
-Source Code: <a href="/Jawaban/2/soal2.sh">soal2.sh</a>
   </li>
   
   <li>Buatlah sebuah script bash yang dapat menghasilkan password secara acak sebanyak 12 karakter yang terdapat huruf besar, huruf kecil, dan angka. Password acak tersebut disimpan pada file berekstensi .txt dengan ketentuan pemberian nama sebagai berikut:
@@ -186,10 +186,10 @@ echo "$password"
 hasil=generate
 `$hasil >> $p`
 ```
-	
-Script ini awalnya akan membuat file `password1.txt` yang berisi password random 12 karakter yang mengandung angka, huruf kecil dan huruf besar. Apabila script ini dijalankan lagi, maka script ini akan mencari `password1.txt`, karena sudah ada file dengan nama tersebut, maka perintah akan membuat file `password2.txt`, dan begitu seterusnya. Apabila suatu file dihapus, maka saat script ini dijalankan, perintah ini akan membuat file baru dengan nama file yang sebelumnya bukan dengan nama file setelah file terbaru, agar urutan nama file tidak ada yang terlewatkan meski filenya dihapus.
 
 Source Code: <a href="/Jawaban/3/soal3.sh">soal3.sh</a>
+
+Script ini awalnya akan membuat file `password1.txt` yang berisi password random 12 karakter yang mengandung angka, huruf kecil dan huruf besar. Apabila script ini dijalankan lagi, maka script ini akan mencari `password1.txt`, karena sudah ada file dengan nama tersebut, maka perintah akan membuat file `password2.txt`, dan begitu seterusnya. Apabila suatu file dihapus, maka saat script ini dijalankan, perintah ini akan membuat file baru dengan nama file yang sebelumnya bukan dengan nama file setelah file terbaru, agar urutan nama file tidak ada yang terlewatkan meski filenya dihapus.
   </li>
   
   <li>Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:
@@ -242,7 +242,10 @@ tr "${cipher1[*]}" "${temp1[*]}" <"$NOW"> "$NOW".decrypted
 ```
 
 Source Code: <a href="/Jawaban/4/soal4.sh">soal4.sh</a> dan <a href="/Jawaban/4/soal4e.sh">soal4e.sh</a>
-  </li><br>
+
+test
+  </li>
+  
   <li>Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:
   <ol>
     <li>Tidak mengandung string “sudo”, tetapi mengandung string “cron”, serta buatlah pencarian stringnya tidak bersifat case sensitive, sehingga huruf kapital atau tidak, tidak menjadi masalah.</li>
@@ -257,9 +260,9 @@ Source Code: <a href="/Jawaban/4/soal4.sh">soal4.sh</a> dan <a href="/Jawaban/4/
   `awk '(!(/[sS][uU][dD][oO]/) && (/[cC][rR][oO][nN]/) && (NF<13))' /var/log/syslog >> modul1`
   ```
   
+  Source Code: <a href="/Jawaban/5/soal5.sh">soal5.sh</a>
+  
   Jalankan perintah awk untuk mencari record dalam syslog yang tidak mengandung string "sudo" tapi mengandung string "cron" dengan cara `(/[cC][rR][oO][nN]/)`. Maksud dari potongan kode tersebut adalah dicari string dengan urutan "cron", dan bersifat tidak case-sensitive. Kemudian hasil tersebut ditambah dengan kondisi jumlah fieldnya kurang dari 13 (NF<13). Perintah ini kemudian dijalankan di crontab dengan kode waktunya `2-30/6 * * * *`, maksudnya setiap 6 menit dari menit ke-2 sampai 30 perintah ini akan dijalankan (menit ke-2, 8, 14, dst.), lalu akan disimpan hasilnya di modul1.
-
-Source Code: <a href="/Jawaban/5/soal5.sh">soal5.sh</a>
   </li>
 </ol>
 
