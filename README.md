@@ -5,7 +5,21 @@
 <ol>
   <li>Anda diminta tolong oleh teman anda untuk mengembalikan filenya yang telah dienkripsi oleh seseorang menggunakan bash script, file yang dimaksud adalah nature.zip. Karena terlalu mudah kalian memberikan syarat akan membuka seluruh  file tersebut jika pukul 14:14 pada tanggal 14 Februari atau hari tersebut adalah hari jumat pada bulan Februari.
   <br>Hint: Base64, Hexdump
-  <br><br>Jawaban:<br>File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. <a href="/Jawaban/1/soal1.sh">Perintah ini</a> dijalankan di crontab dengan kode waktu "14 14 14 2 5", artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan perintah soal1.sh <br> Source Code: <a href="/Jawaban/1/soal1.sh">soal1.sh</a>
+  <br><br>Jawaban:
+```
+#!/bin/bash
+
+unzip /home/siung2/Documents/soalshift1/1/nature.zip -d /home/siung2/Documents/soalshift1/1/
+a=0
+for photo in /home/siung2/Documents/soalshift1/1/nature/*.jpg
+do
+	`base64 -d $photo > /home/siung2/Documents/soalshift1/1/nature/$a.jpg`
+	`xxd -r /home/siung2/Documents/soalshift1/1/nature/$a.jpg > /home/siung2/Documents/soalshift1/1/nature/hasil$a.jpg`
+	`rm /home/siung2/Documents/soalshift1/1/nature/$a.jpg $photo`
+	a=$(($a+1))
+done
+```
+<br>File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. <a href="/Jawaban/1/soal1.sh">Perintah ini</a> dijalankan di crontab dengan kode waktu "14 14 14 2 5", artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan perintah soal1.sh <br> Source Code: <a href="/Jawaban/1/soal1.sh">soal1.sh</a>
   </li>
   <br>  
   <li>Anda merupakan pegawai magang pada sebuah perusahaan retail, dan anda diminta untuk memberikan laporan berdasarkan file WA_Sales_Products_2012-14.csv.
