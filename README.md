@@ -1,6 +1,6 @@
 ﻿# SoalShift_modul1_E08
 
-#### Bagas Yanuar - 05111740000074 <br> Octavianus Giovanni Yaunatan - 05111740000113
+#### Bagas Yanuar Sudrajad - 05111740000074 <br> Octavianus Giovanni Yaunatan - 05111740000113
 
 <ol>
   <li>Anda diminta tolong oleh teman anda untuk mengembalikan filenya yang telah dienkripsi oleh seseorang menggunakan bash script, file yang dimaksud adalah nature.zip. Karena terlalu mudah kalian memberikan syarat akan membuka seluruh  file tersebut jika pukul 14:14 pada tanggal 14 Februari atau hari tersebut adalah hari jumat pada bulan Februari.
