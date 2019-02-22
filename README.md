@@ -23,7 +23,7 @@ done
 
 Source Code: <a href="/Jawaban/1/soal1.sh">soal1.sh</a>
 
-File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. Perintah ini dijalankan di crontab dengan kode waktu `14 14 14 2 5`, artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan script soal1.sh
+File nature.zip awalnya diextract dengan command unzip. Kemudian untuk setiap file di dalam folder nature, didecode dengan menggunakan base64, menyimpan hasil decode file tersebut ke folder yang sama (nature.zip), lalu menghapus file yang terenkripsi sebelumnya. Perintah ini dijalankan di crontab dengan syntax `14 14 14 2 5 /bin/bash /bin/bash /home/siung2/Documents/soalshift1/1/soal1.sh`, artinya setiap jam 14:14 pada tanggal 14 bulan Februari atau hari Jumat di bulan Februari, akan dijalankan script soal1.sh
   </li>
   
   <li>Anda merupakan pegawai magang pada sebuah perusahaan retail, dan anda diminta untuk memberikan laporan berdasarkan file WA_Sales_Products_2012-14.csv.
@@ -243,7 +243,7 @@ tr "${cipher1[*]}" "${temp1[*]}" <"$NOW"> "$NOW".decrypted
 
 Source Code: <a href="/Jawaban/4/soal4.sh">soal4.sh</a> dan <a href="/Jawaban/4/soal4e.sh">soal4e.sh</a>
 
-test
+Script ini dijalankan di crontab dengan syntax `0 * * * * /bin/bash /bin/bash /home/siung2/Documents/soalshift1/4/soal4.sh`, artinya script ini akan dijalankan setiap jam. 
   </li>
   
   <li>Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:
@@ -262,8 +262,8 @@ test
   
   Source Code: <a href="/Jawaban/5/soal5.sh">soal5.sh</a>
   
-  Jalankan perintah awk untuk mencari record dalam syslog yang tidak mengandung string "sudo" tapi mengandung string "cron" dengan cara `(/[cC][rR][oO][nN]/)`. Maksud dari potongan kode tersebut adalah dicari string dengan urutan "cron", dan bersifat tidak case-sensitive. Kemudian hasil tersebut ditambah dengan kondisi jumlah fieldnya kurang dari 13 (NF<13). Perintah ini kemudian dijalankan di crontab dengan kode waktunya `2-30/6 * * * *`, maksudnya setiap 6 menit dari menit ke-2 sampai 30 perintah ini akan dijalankan (menit ke-2, 8, 14, dst.), lalu akan disimpan hasilnya di modul1.
+  Jalankan perintah awk untuk mencari record dalam syslog yang tidak mengandung string "sudo" tapi mengandung string "cron" dengan cara `(/[cC][rR][oO][nN]/)`. Maksud dari potongan kode tersebut adalah dicari string dengan urutan "cron", dan bersifat tidak case-sensitive. Kemudian hasil tersebut ditambah dengan kondisi jumlah fieldnya kurang dari 13 (NF<13). Script ini kemudian dijalankan di crontab dengan syntax `2-30/6 * * * * /bin/bash /bin/bash /home/siung2/Documents/soalshift1/5/soal5.sh`, maksudnya setiap 6 menit dari menit ke-2 sampai 30, script ini akan dijalankan (menit ke-2, 8, 14, dst.), lalu akan disimpan hasilnya di modul1.
   </li>
 </ol>
 
-<a href="/Jawaban/Perintah crontab.txt">Perintah crontab untuk soal tertentu ada di sini<a>
+<a href="/Jawaban/Perintah crontab.txt">Perintah crontab untuk soal 1, 4, dan 5 ada di sini<a>
