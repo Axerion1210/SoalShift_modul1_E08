@@ -257,6 +257,7 @@ Untuk script pada poin (v), file yang sebelumnya telah dibackup akan dibuatkan a
   Jawaban:
   
   ```bash
+  #!/bin/bash
   `awk '(!(/[sS][uU][dD][oO]/) && (/[cC][rR][oO][nN]/) && (NF<13))' /var/log/syslog >> modul1`
   ```
   
